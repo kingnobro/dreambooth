@@ -3,16 +3,16 @@ channels:
   - pytorch
   - nvidia
 dependencies:
-  - python=3.10
-  - pytorch=1.13.1
-  - torchvision=0.14.1
-  - torchaudio=0.13.1
-  - pytorch-cuda=11.7
+  - python=3.8
+  - cudatoolkit=11.6
   - pip
   - pip:
-    - diffusers==0.11.1
-    - transformers==4.25.1
-    - xformers==0.0.16
+    - --extra-index-url https://download.pytorch.org/whl/cu116
+    - torch==1.12.1+cu116
+    - torchaudio==0.12.1
+    - torchvision==0.13.1+cu116
+    - diffusers
+    - transformers
     - accelerate
     - triton
     - ftfy

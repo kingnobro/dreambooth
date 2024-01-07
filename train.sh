@@ -1,9 +1,10 @@
-MODEL_NAME="/home/wuronghuan/pwarp/models/StableDiffusion"
-INSTANCE_DIR="train_images"
-CLASS_DIR="class_images"
-OUTPUT_DIR="man"
+TARGET="man"
+MODEL_NAME="runwayml/stable-diffusion-v1-5"
+INSTANCE_DIR="train_images/$TARGET"
+CLASS_DIR="class_images/$TARGET"
+OUTPUT_DIR="models/$TARGET"
 
-accelerate launch train_dreambooth.py \
+accelerate launch --config_file config/default_config.yaml train_dreambooth.py \
   --pretrained_model_name_or_path=$MODEL_NAME  \
   --train_text_encoder \
   --instance_data_dir=$INSTANCE_DIR \
